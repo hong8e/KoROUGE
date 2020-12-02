@@ -13,6 +13,9 @@ python setup.py install
 ```
 
 ## 2.Run
+* All sentences in the system summary and gold summary must start with <t> and end with <\t> \
+  e.g. <t> 나는 학교에 간다 <\t> <t> 나는 공부한다. <\t>
 ```bash
 python KoROUGE.py $system_summary $gold_summary
+# Basically, KoROUGE calculate ROUGE with morpheme-level automatically, if you don't want to analyze word into morphemes just add options --no_morpheme_analyze
 ```
