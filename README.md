@@ -17,6 +17,6 @@ python setup.py install
   e.g. <t> 나는 학교에 간다 <\t> <t> 나는 공부한다. <\t>
 ```bash
 python KoROUGE.py $system_summary $gold_summary
-# Basically, KoROUGE calculate ROUGE with morpheme-level automatically,
-# if you don't want to analyze word into morphemes just add options --no_morpheme_analyze
+# Basically, KoROUGE automatically analyzes words into morphemes and calcuate ROUGE scores,
+# if you want to calculate ROUGE with word-level just add options "--no_morpheme_analyze".
 ```
