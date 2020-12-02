@@ -7,8 +7,14 @@ Calculating ROUGE score for Korean
 ```bash
 pip install konlpy
 pip install -U git+https://github.com/pltrdy/pyrouge
+
+git clone https://github.com/pltrdy/files2rouge.git     
 cd files2rouge
 python setup_rouge.py
+python setup.py install
+
+git clone https://github.com/hong8e/KoROUGE.git
+cd KoROUGE
 python setup.py install
 ```
 
