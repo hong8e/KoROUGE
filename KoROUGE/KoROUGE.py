@@ -61,7 +61,7 @@ def main():
     lines2 = [line2.strip() for line2 in lines2]
 
     if not args.no_morpheme_analyze:
-        print('morph analizing')
+        print('morph analyzing')
         lines1 = morph_analyze(lines1, k)
         lines2 = morph_analyze(lines2, k)
     newlines1, newlines2 = change_to_numbers(lines1, lines2)
