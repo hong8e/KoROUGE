@@ -38,6 +38,7 @@ optional arguments:
   -h, --help            show this help message and exit
   -nm, --no_morpheme_analyze
                         Turn off morphological analyzer
+  -nl, --no_rouge_l     Do not calculate ROUGE-L
   -n N_GRAM, --n_gram N_GRAM
                         Change max-ngram
   -s SAVETO, --saveto SAVETO
