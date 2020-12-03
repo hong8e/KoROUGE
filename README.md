@@ -28,7 +28,7 @@ KoROUGE $system_summary $gold_summary
 ```
 * Options
 ```
-usage: KoROUGE [-h] [-nm] [-n N_GRAM] [-s SAVETO] system reference
+usage: KoROUGE [-h] [-nm] [-nl] [-n N_GRAM] [-s SAVETO] system reference
 
 positional arguments:
   system                Path to system summary file
