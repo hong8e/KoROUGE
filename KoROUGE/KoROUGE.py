@@ -33,6 +33,7 @@ def morph_analyze(lines, k):
             sents = line[4:-5].split(' </t> <t> ')
             for j, sent in enumerate(sents):
                 sents[j] = k.morphs(sent)
+                print(sents[j])
             lines[i] = '<t> ' + ' </t> <t> '.join([' '.join(sent) for sent in sents]) + ' </t>'
         except:
             lines[i] = ''
@@ -41,17 +42,20 @@ def morph_analyze(lines, k):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('source', type=str)
-    parser.add_argument('target', type=str)
-    parser.add_argument('--no_morpheme_analyze', action='store_true')
+    parser.add_argument('system', type=str, help="Path to system summary file")
+    parser.add_argument('reference', type=str, help="Path to reference file")
+    parser.add_argument('-nm', '--no_morpheme_analyze', action='store_true', help="Turn off morphological analyzer")
+    parser.add_argument('-nl','--no_rouge_l', action='store_true', help="Do not calculate ROUGE-L")
+    parser.add_argument('-n','--n_gram', default="3", type=str, help="Change max-ngram" )
+    parser.add_argument('-s','--saveto', type=str, help="File to save scores")
     args = parser.parse_args()
     
     k = Komoran()
     lines1 = []
     lines2 = []
-    with open(args.source, 'r') as f:
+    with open(args.system, 'r') as f:
         lines1 = f.readlines()
-    with open(args.target, 'r') as f:
+    with open(args.reference, 'r') as f:
         lines2 = f.readlines()
     lines1 = [line1.strip() for line1 in lines1]
     lines2 = [line2.strip() for line2 in lines2]
@@ -61,12 +65,15 @@ def main():
         lines1 = morph_analyze(lines1, k)
         lines2 = morph_analyze(lines2, k)
     newlines1, newlines2 = change_to_numbers(lines1, lines2)
-    with open(args.source + '.vocab', 'w') as f:
+    with open(args.system + '.vocab', 'w') as f:
         f.write('\n'.join(newlines1))
-    with open(args.target + '.vocab', 'w') as f:
+    with open(args.reference + '.vocab', 'w') as f:
         f.write('\n'.join(newlines2))
     print('calculating rouge')
-    files2rouge.run(args.source + '.vocab', args.target + '.vocab', '-c 95 -r 1000 -n 3 -a')
+    if args.no_rouge_l:
+        files2rouge.run(args.system + '.vocab', args.reference + '.vocab', '-c 95 -r 1000 -a -x -n ' + args.n_gram, saveto=args.saveto)
+    else:
+        files2rouge.run(args.system + '.vocab', args.reference + '.vocab', '-c 95 -r 1000 -a -n ' + args.n_gram, saveto=args.saveto)
 
 if __name__=='__main__':	
 	main()
