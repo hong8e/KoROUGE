@@ -1,5 +1,5 @@
 # KoROUGE
-Calculating ROUGE score for Korean
+Calculating ROUGE score for Korean \
 Given two files (system, reference) with the same number of lines, KoROUGE calculates the average ROUGE scores of each line.
 
 ## 1. Requirements and Installation
