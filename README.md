@@ -26,4 +26,20 @@ KoROUGE $system_summary $gold_summary
 # Basically, KoROUGE automatically analyzes words into morphemes and calcuate ROUGE scores,
 # if you want to calculate ROUGE with word-level just add options "--no_morpheme_analyze".
 ```
+* Options
+```
+usage: KoROUGE [-h] [-nm] [-n N_GRAM] [-s SAVETO] system reference
 
+positional arguments:
+  system                Path to system summary file
+  reference             Path to reference file
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -nm, --no_morpheme_analyze
+                        Turn off morphological analyzer
+  -n N_GRAM, --n_gram N_GRAM
+                        Change max-ngram
+  -s SAVETO, --saveto SAVETO
+                        File to save scores
+```
