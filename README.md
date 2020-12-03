@@ -1,7 +1,7 @@
 # KoROUGE
 Calculating ROUGE score for Korean \
 Existing the ROUGE summarization evaluation package does not support Korean.
-KoROUGE is designed to make getting ROUGE scores easier by automatically converting your summaries into alphabets.
+KoROUGE is designed to make getting ROUGE scores easier by automatically analyzing and converting your summaries into morphemes and alphabets.
 Given two files (system, reference) with the same number of lines, KoROUGE calculates the average ROUGE scores of each line. \
 KoROUGE uses files2rouge by Paul Tardy : <https://github.com/pltrdy/files2rouge>.
 
