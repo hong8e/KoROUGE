@@ -48,3 +48,6 @@ optional arguments:
   -s SAVETO, --saveto SAVETO
                         File to save scores
 ```
+
+## License
+KoROUGE is MIT-licensed.
