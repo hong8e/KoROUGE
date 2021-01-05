@@ -33,7 +33,6 @@ def morph_analyze(lines, k):
             sents = line[4:-5].split(' </t> <t> ')
             for j, sent in enumerate(sents):
                 sents[j] = k.morphs(sent)
-                print(sents[j])
             lines[i] = '<t> ' + ' </t> <t> '.join([' '.join(sent) for sent in sents]) + ' </t>'
         except:
             lines[i] = ''
