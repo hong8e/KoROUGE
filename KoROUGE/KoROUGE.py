@@ -23,8 +23,8 @@ def change_to_numbers(lines1, lines2):
     embedding = {key:value for value, key in enumerate(list(vocab))}
     embedding['<t>'] = '<t>'
     embedding['</t>'] = '</t>'
-    lines1 = [' '.join([num_to_alpha(embedding[key.lower()]) for key in line.split()]) for line in lines1]
-    lines2 = [' '.join([num_to_alpha(embedding[key.lower()]) for key in line.split()]) for line in lines2]
+    lines1 = [' '.join([num_to_alpha(embedding[key.lower()]).replace('<t> ', '').replace('</t>', '.') for key in line.split()]) for line in lines1]
+    lines2 = [' '.join([num_to_alpha(embedding[key.lower()]).replace('<t> ', '').replace('</t>', '.') for key in line.split()]) for line in lines2]
     return lines1, lines2
 
 def morph_analyze(lines, k):
