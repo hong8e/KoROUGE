@@ -23,7 +23,7 @@ python setup.py install
 ```
 
 ## 2.Run
-* All sentences in the system summary and gold summary must start with \<t> and end with <\t> \
+* All sentences in the system summary and reference summary must start with \<t> and end with <\t> \
   e.g. \<t> 나는 학교에 간다 <\t> <t> 나는 공부한다. <\t>
 ```bash
 KoROUGE $system_summary $gold_summary
