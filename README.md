@@ -20,6 +20,9 @@ python setup.py install
 git clone https://github.com/hong8e/KoROUGE.git
 cd KoROUGE
 python setup.py install
+
+sudo apt install default-jdk
+apt-get install libxml-parser-perl
 ```
 
 ## 2.Run
@@ -47,6 +50,30 @@ optional arguments:
                         Change max-ngram
   -s SAVETO, --saveto SAVETO
                         File to save scores
+```
+
+* Output
+```
+morph analyzing
+calculating rouge
+Preparing documents... 0 line(s) ignored
+Running ROUGE...
+---------------------------------------------
+1 ROUGE-1 Average_R: 1.00000 (95%-conf.int. 1.00000 - 1.00000)
+1 ROUGE-1 Average_P: 1.00000 (95%-conf.int. 1.00000 - 1.00000)
+1 ROUGE-1 Average_F: 1.00000 (95%-conf.int. 1.00000 - 1.00000)
+---------------------------------------------
+1 ROUGE-2 Average_R: 1.00000 (95%-conf.int. 1.00000 - 1.00000)
+1 ROUGE-2 Average_P: 1.00000 (95%-conf.int. 1.00000 - 1.00000)
+1 ROUGE-2 Average_F: 1.00000 (95%-conf.int. 1.00000 - 1.00000)
+---------------------------------------------
+1 ROUGE-3 Average_R: 1.00000 (95%-conf.int. 1.00000 - 1.00000)
+1 ROUGE-3 Average_P: 1.00000 (95%-conf.int. 1.00000 - 1.00000)
+1 ROUGE-3 Average_F: 1.00000 (95%-conf.int. 1.00000 - 1.00000)
+---------------------------------------------
+1 ROUGE-L Average_R: 1.00000 (95%-conf.int. 1.00000 - 1.00000)
+1 ROUGE-L Average_P: 1.00000 (95%-conf.int. 1.00000 - 1.00000)
+1 ROUGE-L Average_F: 1.00000 (95%-conf.int. 1.00000 - 1.00000)
 ```
 
 ## License
