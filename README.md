@@ -26,7 +26,7 @@ apt-get install libxml-parser-perl
 ```
 
 ## 2.Run
-* All sentences in the system summary and reference summary must start with \<t> and end with <\t> \
+* All sentences in the system summary and reference summary must start with \<t> and end with <&#47;t> \
   e.g. \<t> 나는 학교에 간다 <&#47;t> \<t> 나는 공부한다. <&#47;t>
 ```bash
 KoROUGE $system_summary $gold_summary
